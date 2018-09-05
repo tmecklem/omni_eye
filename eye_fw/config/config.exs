@@ -39,7 +39,7 @@ config :nerves_firmware_ssh,
 # See https://hexdocs.pm/nerves_init_gadget/readme.html for more information.
 
 config :nerves_init_gadget,
-  ifname: "usb0",
+  ifname: "bond0",
   address_method: :dhcpd,
   mdns_domain: "nerves.local",
   node_name: nil,

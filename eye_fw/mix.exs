@@ -49,12 +49,12 @@ defmodule EyeFw.MixProject do
   defp deps(target) do
     [
       {:nerves_runtime, "~> 0.6"},
-      {:nerves_init_gadget, "~> 0.5"}
+      {:nerves_init_gadget, github: "nerves-project/nerves_init_gadget", branch: "usb_gadget"}
     ] ++ system(target)
   end
 
-  defp system("rpi0_zbar"), do: [{:nerves_system_rpi0_zbar, path: "../../nerves_system_rpi0_zbar", runtime: false}]
+  # defp system("rpi0_zbar"), do: [{:nerves_system_rpi0_zbar, path: "../../nerves_system_rpi0_zbar", runtime: false}]
   # In case your local build doesn't work:
-  # defp system("rpi0_zbar"), do: [{:nerves_system_rpi0_zbar, "~> 1.4.0", runtime: false}]
+  defp system("rpi0_zbar"), do: [{:nerves_system_rpi0_zbar, "~> 1.4.0", github: "tmecklem/nerves_system_rpi0_zbar", runtime: false}]
   defp system(target), do: Mix.raise("Unknown MIX_TARGET: #{target}")
 end
